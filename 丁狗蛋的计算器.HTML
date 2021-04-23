@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>丁狗蛋的计算器</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+		
+	<script type="text/javascript">
+		jisuanh = function(){
+			var h = parseInt(document.getElementById("h").value)
+			var b = parseInt(document.getElementById("b").value)
+			var tw = parseInt(document.getElementById("tw").value)
+			var t = parseInt(document.getElementById("t").value)
+			var longth = parseInt(document.getElementById("longth").value)
+			var count = parseInt(document.getElementById("count").value)
+			var result = ((h-2*t)*tw+(2*b*t))*7.854*longth/1000000*count
+			document.getElementById("resulth").innerText = result
+		}
+		jisuanpl = function(){
+			var plc = parseInt(document.getElementById("plc").value)
+			var plk = parseInt(document.getElementById("plk").value)
+			var plh = parseInt(document.getElementById("plh").value)
+			var plcount = parseInt(document.getElementById("plcount").value)
+			var result = plc*plk*plh*7.854/1000000*plcount
+			document.getElementById("resultpl").innerText = result
+		}
+		jisuanx = function(){
+			var plxc = parseInt(document.getElementById("plxc").value)
+			var plxk = parseInt(document.getElementById("plxk").value)
+			var plxh = parseInt(document.getElementById("plxh").value)
+			var xcount = parseInt(document.getElementById("xcount").value)
+			var result = ((plxc+plxk)*2-4*plxh)*plxh*7.854/1000000*xcount
+			document.getElementById("resultx").innerText = result
+		}
+		jisuany = function(){
+			var zj = parseInt(document.getElementById("zj").value)
+			var hd = parseInt(document.getElementById("hd").value)
+			var cd = parseInt(document.getElementById("cd").value)
+			var result = (zj-hd)*hd*0.0246615*cd/1000
+			document.getElementById("resulty").innerText = result
+		}
+		jisuanjg = function(){
+			var jga = parseInt(document.getElementById("jga").value)
+			var jgb = parseInt(document.getElementById("jgb").value)
+			var jgh = parseInt(document.getElementById("jgh").value)
+			var jgc = parseInt(document.getElementById("jgc").value)
+			var result = ((jga+jgb)-jgh)*7.854/1000000
+			document.getElementById("resultjg").innerText = result
+		}
+	</script>
+	<body style="margin-left: 50px;">	
+		
+		<div>
+			<h2>H型钢</h2>
+			h:<input type="text" id = "h">
+			b:<input type="text" id = "b">
+			tw:<input type="text" id = "tw">
+			t:<input type="text" id = "t">
+			长度:<input type="text" id = "longth">
+			数量:<input type="text" id = "count" value="1">
+			<button onclick="javascript:jisuanh()">计算</button>
+			<div>
+				<span>结果：</span>
+				<span id="resulth"></span>
+			</div>
+		</div>
+		
+		<div>
+			<h2>PL钢板</h2>
+			长:<input type="text" id = "plc">
+			宽:<input type="text" id = "plk">
+			厚:<input type="text" id = "plh">
+			数量:<input type="text" id = "plcount" value="1">
+			<button onclick="javascript:jisuanpl()">计算</button>
+			<div>
+				<span>结果：</span>
+				<span id="resultpl"></span>
+			</div>
+		</div>
+		
+		<div>
+			<h2>箱型梁</h2>
+			长:<input type="text" id = "plxc">
+			宽:<input type="text" id = "plxk">
+			厚:<input type="text" id = "plxh">
+			数量:<input type="text" id = "xcount" value="1">
+			<button onclick="javascript:jisuanx()">计算</button>
+			<div>
+				<span>结果：</span>
+				<span id="resultx"></span>
+			</div>
+		</div>
+		
+		<div>
+			<h2>圆管</h2>
+			直径:<input type="text" id = "zj">
+			厚度:<input type="text" id = "hd">
+			长度:<input type="text" id = "cd">
+			<!-- 数量:<input type="text" id = "plcount"> -->
+			<button onclick="javascript:jisuany()">计算</button>
+			<div>
+				<span>结果：</span>
+				<span id="resulty"></span>
+			</div>
+		</div>
+		
+		<div>
+			<h2>角钢</h2>
+			a:<input type="text" id = "jga">
+			b:<input type="text" id = "jgb">
+			厚:<input type="text" id = "jgh">
+			长度:<input type="text" id = "jgc">
+			<button onclick="javascript:jisuanjg()">计算</button>
+			<div>
+				<span>结果：</span>
+				<span id="resultjg"></span>
+			</div>
+		</div>
+	</body>
+	
+
+</html>
